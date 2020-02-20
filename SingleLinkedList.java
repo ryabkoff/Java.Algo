@@ -77,27 +77,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public T deleteAt(int index) {
-
-        if (index == 0) {
-            head = head.next;
-            return head.value;
-        }
-
-        Node<T> curr = head;
-        Node<T> prev = null;
-        for (int i = 0; i < index && curr != null; i++) {
-            prev = curr;
-            curr = curr.next;
-        }
-
-        if (curr != null) {
-            prev.next = curr.next;
-            return curr.value;
-        }
-        else {
-            return null;
-        }
-
+        //TODO реализовать в качестве ДЗ
+        return null;
     }
 
     private Node<T> findPrev(Node<T> node) {
@@ -109,23 +90,26 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public void push(T value) {
-        insertHead(value);
+        //TODO реализовать в качестве ДЗ
     }
 
     public T pop() {
-        return deleteHead();
+        //TODO реализовать в качестве ДЗ
+        return null;
     }
 
     public T peek() {
-        return head.value;
+        //TODO реализовать в качестве ДЗ
+        return null;
     }
 
     public void enqueue(T value) {
-        insertHead(value);
+        //TODO реализовать в качестве ДЗ
     }
 
     public T dequeue() {
-        return deleteTail();
+        //TODO реализовать в качестве ДЗ
+        return null;
     }
 
     @Override
@@ -160,56 +144,15 @@ public class SingleLinkedList<T> implements Iterable<T> {
     public static void main(String[] args) {
         SingleLinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
         singleLinkedList.insertHead(1);
-        singleLinkedList.insertHead(3);
-        singleLinkedList.insertHead(5);
-        singleLinkedList.insertHead(7);
-
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
         singleLinkedList.insertTail(2);
+        singleLinkedList.insertHead(3);
         singleLinkedList.insertTail(4);
+        singleLinkedList.insertHead(5);
         singleLinkedList.insertTail(6);
+        singleLinkedList.insertHead(7);
         singleLinkedList.insertTail(8);
         singleLinkedList.insertTail(9);
-
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.push(0);
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.pop();
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-        System.out.println(singleLinkedList.peek());
-
-        singleLinkedList.enqueue(6);
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.dequeue();
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.deleteAt(15);
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.deleteAt(0);
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.deleteAt(7);
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        singleLinkedList.deleteAt(3);
-        singleLinkedList.forEach(System.out::print);
-        System.out.println();
-
-        /*singleLinkedList.insertAt(0, 11);
+        singleLinkedList.insertAt(0, 11);
         singleLinkedList.insertAt(4, 12);
         singleLinkedList.insertAt(12, 13);
 
@@ -228,6 +171,6 @@ public class SingleLinkedList<T> implements Iterable<T> {
         singleLinkedList.deleteHead();
 
         System.out.println("After delete all");
-        singleLinkedList.forEach(System.out::println);*/
+        singleLinkedList.forEach(System.out::println);
     }
 }
